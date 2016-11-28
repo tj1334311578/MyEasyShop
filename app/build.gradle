@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+    defaultConfig {
+        applicationId "com.example.administrator.myeasyshop"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    testCompile 'junit:junit:4.12'
+
+    compile 'com.android.support:support-v4:24.2.1'
+    //自定义圆形图片组件
+    compile 'com.pkmmte.view:circularimageview:1.1'
+    //OkHttp
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    //Okhttp拦截器
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    //Gson
+    compile 'com.google.code.gson:gson:2.8.0'
+    //mosby。MVP
+    compile 'com.hannesdorfmann.mosby:mvp:2.0.1'
+    //图片裁剪的库
+    compile 'org.hybridsquad.android.photocropper:library:2.1.0'
+    //ImageLoader
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    //ButerKnife
+    compile 'com.jakewharton:butterknife:8.4.0'
+    //这句不填写就会报空指针
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    //上拉刷新，下载加载的库
+    compile 'in.srain.cube:ptr-load-more:1.0.2'
+    //recyclerview
+    compile 'jp.wasabeef:recyclerview-animators:2.2.3'
+}
